@@ -1,0 +1,155 @@
+/* main.css */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Noto Sans SC', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background: linear-gradient(135deg, #f0f9ff 0%, #cbebff 100%); /* Light blue gradient */
+  color: #333;
+  overflow: hidden; /* Prevent scrollbars on the main page if content is minimal */
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Center content vertically */
+  min-height: 100vh; /* Full viewport height */
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.hero-section {
+  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white card */
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  max-width: 700px;
+  width: 90%;
+}
+
+.logo {
+  width: 80px; /* Adjust size as needed */
+  height: 80px;
+  margin-bottom: 20px;
+  border-radius: 50%; /* Make it circular if the image is square */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+h1 {
+  font-size: 2.2em; /* Responsive font size */
+  color: #005A9C; /* A deep blue */
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  font-weight: 700;
+}
+
+.tagline {
+  font-size: 1.1em;
+  color: #555;
+  margin-bottom: 1.5em;
+  line-height: 1.6;
+}
+
+.brand-name {
+  font-weight: 600;
+  color: #D9534F; /* A contrasting color for the brand */
+}
+
+.cta-guidance {
+  margin-top: 25px;
+  padding: 20px;
+  background-color: #e6f7ff; /* Lighter blue for emphasis */
+  border-radius: 8px;
+  border: 1px solid #b3e0ff;
+}
+
+.cta-guidance p {
+  font-size: 1em;
+  color: #004C80;
+  margin: 0.6em 0;
+  line-height: 1.5;
+}
+
+.highlight-text {
+  font-weight: 700;
+  color: #007BFF; /* Bright blue for the keyword */
+  padding: 2px 5px;
+  background-color: #d1eaff;
+  border-radius: 4px;
+  animation: pulse 2s infinite ease-in-out;
+}
+
+.arrow-indicator {
+  font-size: 1.6em;
+  color: #007BFF;
+  display: inline-block;
+  margin-left: 8px;
+  transform: translateY(3px); /* Align with text */
+  animation: bounceArrow 1.5s infinite;
+}
+
+.page-footer {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+  font-size: 0.85em;
+  color: #777;
+}
+
+/* Animations */
+@keyframes pulse {
+  0% {
+      box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.5);
+  }
+  70% {
+      box-shadow: 0 0 0 10px rgba(0, 123, 255, 0);
+  }
+  100% {
+      box-shadow: 0 0 0 0 rgba(0, 123, 255, 0);
+  }
+}
+
+@keyframes bounceArrow {
+  0%, 20%, 50%, 80%, 100% {
+      transform: translateY(3px) translateX(0px) rotate(0deg);
+  }
+  40% {
+      transform: translateY(-2px) translateX(2px) rotate(5deg); /* Slight bounce to SE */
+  }
+  60% {
+      transform: translateY(1px) translateX(-1px) rotate(-2deg);
+  }
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  h1 {
+      font-size: 1.8em;
+  }
+  .tagline, .cta-guidance p {
+      font-size: 0.95em;
+  }
+  .hero-section {
+      padding: 20px;
+  }
+  .logo {
+      width: 60px;
+      height: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+      font-size: 1.6em;
+  }
+  .tagline, .cta-guidance p {
+      font-size: 0.9em;
+  }
+  .hero-section {
+      margin-top: 10vh; /* Give a bit more space from top on very small screens */
+  }
+}
