@@ -1,3 +1,13 @@
+function getUniqueUserId() {
+  let userId = localStorage.getItem('cozeChatUserId');
+  if (!userId) {
+    // 生成一个简单的唯一ID (可以使用更健壮的UUID库如 uuid.js)
+    userId = 'user_' + Date.now() + '_' + Math.random().toString(36).substring(2, 15);
+    localStorage.setItem('cozeChatUserId', userId);
+  }
+  return userId;
+}
+
 new CozeWebSDK.WebChatClient({
     /**
     * 代理或应用设置
@@ -29,9 +39,9 @@ new CozeWebSDK.WebChatClient({
     * @param userInfo.nickname - 代理用户的昵称.
     */
     userInfo: {
-      id: 'user',
+      id: getUniqueUserId(), // 使用动态生成的唯一ID
       url: 'https://lf-coze-web-cdn.coze.cn/obj/coze-web-cn/obric/coze/favicon.1970.png',
-      nickname: 'UserA',
+      nickname: '访客', // 或者可以允许用户自定义，或者基于生成的ID生成一个昵称
     },
     ui: {
       /**
